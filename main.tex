@@ -1,0 +1,112 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{pagecolor}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{lmodern} % Modern Latin font for sharpness
+\usepackage{microtype}
+
+% --- LIBRARIES ---
+\tcbuselibrary{skins}
+
+% --- SPACING & TYPOGRAPHY ---
+\renewcommand{\baselinestretch}{1.2} % Improved line spacing
+\setlength{\parindent}{0pt}
+
+% --- NIGHT TIME BACKGROUND ---
+\definecolor{nightSky}{RGB}{25, 30, 55}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \pgfmathsetseed{42}
+    \foreach \i in {1,...,120} {
+      \pgfmathsetmacro{\x}{rnd*\paperwidth}
+      \pgfmathsetmacro{\y}{rnd*\paperheight}
+      \pgfmathsetmacro{\size}{0.009 + rnd*0.032}
+      \pgfmathsetmacro{\opac}{0.14 + rnd*0.42}
+      \fill[white, opacity=\opac] (current page.south west) ++(\x pt,\y pt) circle[radius=\size cm];
+    }
+  \end{tikzpicture}%
+}
+
+% --- COLORS ---
+\definecolor{softBanana}{RGB}{255, 253, 220}
+\definecolor{softStrawberry}{RGB}{255, 225, 230}
+\definecolor{softPurple}{RGB}{240, 230, 250}
+\definecolor{softTurquoise}{RGB}{210, 245, 240}
+\definecolor{softMint}{RGB}{224, 255, 235}
+\definecolor{softPeach}{RGB}{255, 236, 214}
+\definecolor{softBlue}{RGB}{220, 235, 255}
+\definecolor{softGrayBlue}{RGB}{230, 235, 240}
+\definecolor{textGray}{RGB}{60, 60, 60}
+
+% --- BOX SETTINGS ---
+\tcbset{
+    colframe=white!38!black,
+    coltext=textGray,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=gray!35!white,
+    boxrule=0.5mm,
+    arc=2.5mm,
+    left=4mm, right=4mm, top=4mm, bottom=4mm,
+    enhanced,
+    shadow={1mm}{-1mm}{0mm}{black!28}
+}
+
+\title{\textbf{Subject Learning Template}}
+\date{}
+\author{}
+
+\begin{document}
+
+% --- APPLY THEME ---
+\pagecolor{nightSky}
+\color{white}
+\begin{center}
+{\fontsize{23}{26}\selectfont\bfseries Subject Learning Template}\par
+\vspace{0.15cm}
+{\large\color{white!82}Calm Night Study Sheet}\par
+\vspace{0.30cm}
+{\color{white!35}\rule{0.72\textwidth}{0.4pt}}
+\end{center}
+\vspace{0.45cm}
+
+\noindent
+\begin{minipage}{0.48\textwidth}
+    \begin{tcolorbox}[colback=softBanana, title=Step 1, height=0.22\textheight]
+    \end{tcolorbox}
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}
+    \begin{tcolorbox}[colback=softStrawberry, title=Step 2, height=0.22\textheight]
+    \end{tcolorbox}
+\end{minipage}
+
+\vspace{0.35cm}
+
+\noindent
+\begin{minipage}{0.48\textwidth}
+    \begin{tcolorbox}[colback=softTurquoise, title=Step 3, height=0.22\textheight]
+    \end{tcolorbox}
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}
+    \begin{tcolorbox}[colback=softPurple, title=Step 4, height=0.22\textheight]
+    \end{tcolorbox}
+\end{minipage}
+
+\vspace{0.35cm}
+
+\begin{center}
+\begin{minipage}{0.48\textwidth}
+    \begin{tcolorbox}[colback=softPeach, title=Step 5, height=0.22\textheight]
+    \end{tcolorbox}
+\end{minipage}
+\end{center}
+
+\end{document}
