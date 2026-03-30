@@ -4,13 +4,15 @@
 \usepackage{amsmath, amssymb}
 \usepackage{tcolorbox}
 \usepackage{xcolor}
-\usepackage{graphicx}
 \usepackage{pagecolor}
 \usepackage{eso-pic}
 \usepackage{tikz}
-\usepackage{enumitem}
 \usepackage{lmodern} % Modern Latin font for sharpness
 \usepackage{microtype}
+
+% --- DOCUMENT IDENTITY ---
+\newcommand{\mytopic}{Subject Learning Template}
+\newcommand{\mysubtitle}{Calm Night Study Sheet}
 
 % --- LIBRARIES ---
 \tcbuselibrary{skins}
@@ -60,9 +62,13 @@
     shadow={1mm}{-1mm}{0mm}{black!28}
 }
 
-\title{\textbf{Subject Learning Template}}
-\date{}
-\author{}
+% --- STEP BOX MACRO ---
+% Usage: \stepbox{color}{Title}{content}
+\newcommand{\stepbox}[3]{%
+  \begin{tcolorbox}[colback=#1, title=#2, height=0.22\textheight]
+    #3
+  \end{tcolorbox}
+}
 
 \begin{document}
 
@@ -70,9 +76,9 @@
 \pagecolor{nightSky}
 \color{white}
 \begin{center}
-{\fontsize{23}{26}\selectfont\bfseries Subject Learning Template}\par
+{\fontsize{23}{26}\selectfont\bfseries \mytopic}\par
 \vspace{0.15cm}
-{\large\color{white!82}Calm Night Study Sheet}\par
+{\large\color{white!82}\mysubtitle}\par
 \vspace{0.30cm}
 {\color{white!35}\rule{0.72\textwidth}{0.4pt}}
 \end{center}
@@ -80,32 +86,27 @@
 
 \noindent
 \begin{minipage}{0.48\textwidth}
-    \begin{tcolorbox}[colback=softBanana, title=Step 1, height=0.22\textheight]
-    \end{tcolorbox}
+    \stepbox{softBanana}{Step 1}{}
 \end{minipage}\hfill
 \begin{minipage}{0.48\textwidth}
-    \begin{tcolorbox}[colback=softStrawberry, title=Step 2, height=0.22\textheight]
-    \end{tcolorbox}
+    \stepbox{softStrawberry}{Step 2}{}
 \end{minipage}
 
 \vspace{0.35cm}
 
 \noindent
 \begin{minipage}{0.48\textwidth}
-    \begin{tcolorbox}[colback=softTurquoise, title=Step 3, height=0.22\textheight]
-    \end{tcolorbox}
+    \stepbox{softTurquoise}{Step 3}{}
 \end{minipage}\hfill
 \begin{minipage}{0.48\textwidth}
-    \begin{tcolorbox}[colback=softPurple, title=Step 4, height=0.22\textheight]
-    \end{tcolorbox}
+    \stepbox{softPurple}{Step 4}{}
 \end{minipage}
 
 \vspace{0.35cm}
 
 \begin{center}
 \begin{minipage}{0.48\textwidth}
-    \begin{tcolorbox}[colback=softPeach, title=Step 5, height=0.22\textheight]
-    \end{tcolorbox}
+    \stepbox{softPeach}{Step 5}{}
 \end{minipage}
 \end{center}
 
